@@ -18,6 +18,11 @@ $ ln -s nvim/ ~/.config/nvim/
 $ ln -s tmux/tmux.conf ~/.tmux.conf
 ```
 
+# tmux improvements
+```console
+$ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+```
+
 ## escape key
 ```console
 $ gnome-tweaks
@@ -25,20 +30,4 @@ $ gnome-tweaks
 
 1. Keyboard & Mouse -> Additional Layout Options
 2. Caps Lock Behavior -> Make Caps Lock an Additional Escape
-
-## nvim plugin install -> vim-plug
-```console
-sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
-       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
-```
-
-## install neovim plugins
-```console
-
-$ nvim
-
-(app loads)
-
-:PlugInstall
-```
 
