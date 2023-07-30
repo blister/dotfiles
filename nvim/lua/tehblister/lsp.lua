@@ -47,7 +47,7 @@ end)
 
 -- require lua language lsp
 -- require('lspconfig').lua_ls.setup(lsp.nvim_lua_ls())
-require('lspconfig').eslint.setup({
+require('lspconfig').denols.setup({
 		on_init = function(client)
 				client.server_capabilities.documentFormattingProvider = false
 				client.server_capabilities.documentFormattingRangeProvider = false
