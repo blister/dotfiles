@@ -30,7 +30,7 @@ lsp.set_preferences({
 		}
 })
 
-lsp.on_attach(function(client, bufnr) 
+lsp.on_attach(function(client, bufnr)
 	local opts = { buffer = bufnr, remap = false }
 
 	vim.keymap.set('n', 'gd', function() vim.lsp.buf.definition() end, opts)
@@ -47,6 +47,13 @@ end)
 
 -- require lua language lsp
 -- require('lspconfig').lua_ls.setup(lsp.nvim_lua_ls())
+require('lspconfig').eslint.setup({
+		on_init = function(client)
+				client.server_capabilities.documentFormattingProvider = false
+				client.server_capabilities.documentFormattingRangeProvider = false
+		end
+})
+
 
 lsp.setup()
 
