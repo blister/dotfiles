@@ -60,13 +60,11 @@ require('lspconfig').phpactor.setup({
 			client.server_capabilities.documentFormattingProvider = false
 			client.server_capabilities.documentFormattingRangeProvider = false
 
-			print(string.format('wtf php? %s', bufnr))
+			print(string.format('php! FIX YOUR LSP %s', bufnr))
 			vim.cmd('augroup Phpactor')
-			vim.cmd('set verbose=1')
 			vim.cmd('autocmd!')
 			vim.cmd('autocmd Filetype php command! -nargs=0 PhpactorReindex lua vim.lsp.buf_notify(0, "phpactor/indexer/reindex", {})')
 			vim.cmd('augroup END')
-			print(string.format('did we do it? %s', bufnr))
 		end,
 		on_init = function()
 		end,
