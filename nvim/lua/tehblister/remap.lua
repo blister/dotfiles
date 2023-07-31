@@ -26,7 +26,7 @@ vim.keymap.set('n', '<leader>Y', "\"+Y")
 vim.keymap.set('n', 'Q', '<nop>')
 
 -- vim project through tmux
---vim.keymap.set('n', '<C-f>', '<cmd>silent !tmux neww tmux-sessionizer<CR>')
+vim.keymap.set('n', '<C-t>', '<cmd>silent !tmux neww tmux-sessionizer.sh<CR>')
 vim.keymap.set('n', '<leader>f', function()
 	vim.lsp.buf.format()
 end)

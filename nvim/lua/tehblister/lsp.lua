@@ -6,18 +6,18 @@ lsp.preset('recommended')
 -- fix undefined global 'vim'
 lsp.nvim_workspace()
 
---[[
 local cmp = require('cmp')
 local cmp_select = {behavior = cmp.SelectBehavior.Select}
 local cmp_mappings = lsp.defaults.cmp_mappings({
 	['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
 	['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
-	['<C-y>'] = cmp.mapping.confirm({ select = true }),
+	['<CR>'] = cmp.mapping.confirm({ select = true }),
 	['<C-Space>'] = cmp.mapping.complete(),
-
 })
-lsp.set_preferences({ sign_icons = {} })
+
 lsp.setup_nvim_cmp({ mapping = cmp_mappings })
+--[[
+lsp.set_preferences({ sign_icons = {} })
 --]]
 
 lsp.set_preferences({
@@ -52,6 +52,15 @@ require('lspconfig').denols.setup({
 				client.server_capabilities.documentFormattingProvider = false
 				client.server_capabilities.documentFormattingRangeProvider = false
 		end
+})
+
+require('lspconfig').phpactor.setup({
+		init_options = {
+			["language_server_phpstan.enabled"] = false,
+			["language_server_psalm.enabled"] = false,
+			["code_transform.import_globals"] = true,
+			["language_server_code_transform.import_globals"] = true
+		}
 })
 
 

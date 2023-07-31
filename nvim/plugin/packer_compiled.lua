@@ -79,6 +79,11 @@ _G.packer_plugins = {
     path = "/home/erh/.local/share/nvim/site/pack/packer/start/LuaSnip",
     url = "https://github.com/L3MON4D3/LuaSnip"
   },
+  catppuccin = {
+    loaded = true,
+    path = "/home/erh/.local/share/nvim/site/pack/packer/start/catppuccin",
+    url = "https://github.com/catppuccin/nvim"
+  },
   ["cmp-nvim-lsp"] = {
     loaded = true,
     path = "/home/erh/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp",
@@ -89,6 +94,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/erh/.local/share/nvim/site/pack/packer/start/dracula",
     url = "https://github.com/dracula/vim"
+  },
+  ["feline.nvim"] = {
+    loaded = true,
+    path = "/home/erh/.local/share/nvim/site/pack/packer/start/feline.nvim",
+    url = "https://github.com/feline-nvim/feline.nvim"
   },
   harpoon = {
     loaded = true,
@@ -129,6 +139,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/erh/.local/share/nvim/site/pack/packer/start/nvim-treesitter-context",
     url = "https://github.com/nvim-treesitter/nvim-treesitter-context"
+  },
+  ["nvim-web-devicons"] = {
+    loaded = true,
+    path = "/home/erh/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
+    url = "https://github.com/nvim-tree/nvim-web-devicons"
   },
   ["packer.nvim"] = {
     loaded = true,
