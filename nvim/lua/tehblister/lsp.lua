@@ -76,7 +76,6 @@ require('lspconfig').phpactor.setup({
 			["language_server_psalm.enabled"] = false,
 			["code_transform.import_globals"] = true,
 			["language_server_code_transform.import_globals"] = true,
-			["completion_worse.completer.symphony.enabled"] = false,
 			['language_server_code_transform.import_name.report_non_existing_names'] = false,
 			["class_to_file.brute_force_conversion"] = true,
 			["code_transform.indentation"] = "\t",
