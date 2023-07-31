@@ -43,6 +43,7 @@ lsp.on_attach(function(client, bufnr)
 	vim.keymap.set('n', '<leader>vrr', function() vim.lsp.buf.references() end, opts)
 	vim.keymap.set('n', '<leader>vrn', function() vim.lsp.buf.rename() end, opts)
 	vim.keymap.set('n', '<C-h>', function() vim.lsp.buf.signature_help() end, opts)
+
 end)
 
 -- require lua language lsp
@@ -55,14 +56,32 @@ require('lspconfig').denols.setup({
 })
 
 require('lspconfig').phpactor.setup({
+		on_attach = function(client, bufnr)
+			client.server_capabilities.documentFormattingProvider = false
+			client.server_capabilities.documentFormattingRangeProvider = false
+
+			print(string.format('wtf php? %s', bufnr))
+			vim.cmd('augroup Phpactor')
+			vim.cmd('set verbose=1')
+			vim.cmd('autocmd!')
+			vim.cmd('autocmd Filetype php command! -nargs=0 PhpactorReindex lua vim.lsp.buf_notify(0, "phpactor/indexer/reindex", {})')
+			vim.cmd('augroup END')
+			print(string.format('did we do it? %s', bufnr))
+		end,
+		on_init = function()
+		end,
+
 		init_options = {
 			["language_server_phpstan.enabled"] = false,
 			["language_server_psalm.enabled"] = false,
 			["code_transform.import_globals"] = true,
-			["language_server_code_transform.import_globals"] = true
+			["language_server_code_transform.import_globals"] = true,
+			["completion_worse.completer.symphony.enabled"] = false,
+			['language_server_code_transform.import_name.report_non_existing_names'] = false,
+			["class_to_file.brute_force_conversion"] = true,
+			["code_transform.indentation"] = "\t",
 		}
 })
-
 
 lsp.setup()
 

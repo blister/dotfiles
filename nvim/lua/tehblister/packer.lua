@@ -41,6 +41,16 @@ return require('packer').startup(function(use)
 		}
 	}
 
+	use {
+		'j-hui/fidget.nvim',
+		tag = 'legacy',
+		config = function()
+			require("fidget").setup {
+				-- options
+			}
+		end,
+	}
+
 	use 'nvim-tree/nvim-web-devicons'
 
 	use { 'feline-nvim/feline.nvim', branch = '0.5-compat' }
