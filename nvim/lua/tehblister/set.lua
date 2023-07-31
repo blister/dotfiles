@@ -1,6 +1,5 @@
 vim.opt.showcmd = true
 
-
 vim.opt.nu = true
 vim.opt.relativenumber = true
 
@@ -36,9 +35,6 @@ vim.opt.isfname:append('@-@')
 vim.opt.updatetime = 50 -- use a fast update time
 
 vim.opt.colorcolumn = "80"
-
--- snippets
---vim.keymap.set("n", "<leader>html", vim.cmd('-1read' .. os.getenv('HOME') .. '/dotfiles/skeletons/html<CR>'))
 
 -- global leader key
 vim.g.mapleader = ' '
