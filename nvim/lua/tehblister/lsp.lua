@@ -49,12 +49,20 @@ end)
 -- require lua language lsp
 -- require('lspconfig').lua_ls.setup(lsp.nvim_lua_ls())
 require('lspconfig').denols.setup({
-		on_init = function(client)
-				client.server_capabilities.documentFormattingProvider = false
-				client.server_capabilities.documentFormattingRangeProvider = false
-		end
+	on_init = function(client)
+		client.server_capabilities.documentFormattingProvider = false
+		client.server_capabilities.documentFormattingRangeProvider = false
+	end
 })
 
+require('lspconfig').psalm.setup({
+	on_init = function(client)
+		client.server_capabilities.documentFormattingProvider = false
+		client.server_capabilities.documentFormattingRangeProvider = false
+	end
+})
+
+--[[
 require('lspconfig').phpactor.setup({
 		on_attach = function(client, bufnr)
 			client.server_capabilities.documentFormattingProvider = false
@@ -79,6 +87,7 @@ require('lspconfig').phpactor.setup({
 			["code_transform.indentation"] = "\t",
 		}
 })
+--]]
 
 lsp.setup()
 

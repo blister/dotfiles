@@ -21,9 +21,37 @@ return require('packer').startup(function(use)
 	use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' })
 	use('nvim-treesitter/playground')
 	use('nvim-treesitter/nvim-treesitter-context')
+
+	-- treesj toggle <leader>m (toggle node>
+	use({
+		'wansmer/treesj',
+		requires = { 'nvim-treesitter' },
+		config = function()
+			require('treesj').setup({
+
+			})
+		end
+	})
+
+	-- consider kevinhwang91/nvim-bqf
+	-- considerf-person/git-blame.nvim
+	use({ 'folke/trouble.nvim' })
+
 	use('theprimeagen/harpoon')
 	use('mbbill/undotree')
 	use('tpope/vim-fugitive')
+
+	-- cool editing plugins 
+	use({
+		'kylechui/nvim-surround',
+		tag = '*',
+		config = function()
+			require('nvim-surround').setup({
+			})
+		end
+	})
+
+
 
 	use {
 		'VonHeikemen/lsp-zero.nvim',
