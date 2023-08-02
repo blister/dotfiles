@@ -80,7 +80,12 @@ return require('packer').startup(function(use)
 	}
 
 	use 'nvim-tree/nvim-web-devicons'
-
+	use({
+		'lewis6991/gitsigns.nvim',
+		config = function()
+			require('gitsigns').setup()
+		end
+	})
 	use { 'feline-nvim/feline.nvim', branch = '0.5-compat' }
 	use { "catppuccin/nvim", as = "catppuccin" }
 	use { 'folke/tokyonight.nvim' }
