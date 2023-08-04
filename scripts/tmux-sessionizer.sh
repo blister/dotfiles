@@ -3,7 +3,7 @@
 if [[ $# -eq 1 ]]; then
     selected=$1
 else
-    selected=$(find ~/dotfiles ~/development ~/development/makestartups ~/development/explorations -mindepth 1 -maxdepth 1 -type d -not -path '*/.*'  | fzf)
+    selected=$(find ~/dotfiles ~/development/makestartups ~/development/projects ~/development/explorations ~/development/rsc ~/development -mindepth 1 -maxdepth 1 -type d -not -path '*/.*'  | fzf)
 fi
 
 if [[ -z $selected ]]; then
