@@ -1,5 +1,9 @@
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex, { desc = 'Show current folder contents.' })
 
+-- BUFFER SWAPPING. JUST LIKE QUAKE! Woot.
+vim.keymap.set('n', 'q', '<cmd>bp<CR>', { desc = 'Go to prev file in buffer' })
+vim.keymap.set('n', 'e', '<cmd>bn<CR>', { desc = 'Go to next file in buffer' })
+
 -- VISUAL - J/K MOVE ENTIRE BLOCK UP/DOWN
 vim.keymap.set('v', 'J', ":m '>+1<CR>gv=gv")
 vim.keymap.set('v', 'K', ":m '<-2<CR>gv=gv")
@@ -68,9 +72,6 @@ vim.keymap.set('n', '<leader>php', function()
 end)
 
 
--- buffer navigation
-vim.keymap.set('n', '<leader>qq', '<cmd>bp<CR>', { desc = 'Go to prev file in buffer' })
-vim.keymap.set('n', '<leader>ee', '<cmd>bn<CR>', { desc = 'Go to next file in buffer' })
 
 -- quickfix navigation
 --[[
