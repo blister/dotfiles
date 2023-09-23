@@ -51,8 +51,6 @@ return require('packer').startup(function(use)
 		end
 	})
 
-
-
 	use {
 		'VonHeikemen/lsp-zero.nvim',
 		branch = 'v2.x',
@@ -67,16 +65,6 @@ return require('packer').startup(function(use)
 			{ 'hrsh7th/cmp-nvim-lsp' }, -- Required
 			{ 'L3MON4D3/LuaSnip' }, -- Required
 		}
-	}
-
-	use {
-		'j-hui/fidget.nvim',
-		tag = 'legacy',
-		config = function()
-			require("fidget").setup {
-				-- options
-			}
-		end,
 	}
 
 	use 'nvim-tree/nvim-web-devicons'
