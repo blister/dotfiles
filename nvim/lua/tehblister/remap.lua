@@ -1,7 +1,8 @@
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex, { desc = 'Show current folder contents.' })
 
 -- BUFFER SWAPPING. JUST LIKE QUAKE! Woot.
-vim.keymap.set('n', 'q', '<cmd>bp<CR>', { desc = 'Go to prev file in buffer' })
+vim.keymap.set('n', 'q', '<C-^>', { desc = 'Go to prev file in buffer' })
+vim.keymap.set('n', '<C-q>', '<C-^>', { desc = 'Go to prev file in buffer' })
 vim.keymap.set('n', 'e', '<cmd>bn<CR>', { desc = 'Go to next file in buffer' })
 
 -- VISUAL - J/K MOVE ENTIRE BLOCK UP/DOWN
@@ -71,7 +72,16 @@ vim.keymap.set('n', '<leader>php', function()
 	vim.cmd('%s/--FULLDATE--/' .. string.format('%s/g', fulldate))
 end)
 
-
+-- aerial keymaps
+vim.keymap.set('n', '<leader>at', '<cmd>AerialToggle!<CR>', {
+	desc = '[A]erial [T]oggle - show Aerial panel'
+});
+vim.keymap.set('n', '<leader>an', '<cmd>AerialNext<CR>', {
+	desc = 'Jump to [A]erial [N]ext symbol'
+});
+vim.keymap.set('n', '<leader>ap', '<cmd>AerialPrev<CR>', {
+	desc = 'Jump to [A]erial [P]revious symbol'
+});
 
 -- quickfix navigation
 --[[

@@ -77,4 +77,8 @@ return require('packer').startup(function(use)
 	use { 'feline-nvim/feline.nvim', branch = '0.5-compat' }
 	use { "catppuccin/nvim", as = "catppuccin" }
 	use { 'folke/tokyonight.nvim' }
+
+	-- aerial (for symbol panel)
+	use { 'stevearc/aerial.nvim' }
+
 end)
