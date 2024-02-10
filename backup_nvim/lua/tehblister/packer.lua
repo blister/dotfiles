@@ -25,7 +25,6 @@ return require('packer').startup(function(use)
 	-- treesj toggle <leader>m (toggle node>
 	use({
 		'wansmer/treesj',
-		requires = { 'nvim-treesitter' },
 		config = function()
 			require('treesj').setup({
 
